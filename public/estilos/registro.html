@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de Usuario - Tienda Gamer</title>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    main {
+      flex: 1 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="cyan">
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="#" class="brand-logo">Tienda Gamer</a>
+          <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Catálogo</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-menu">
+            <li>
+              <div class="userView">
+                <div class="background">
+                  <img src="http://lorempixel.com/output/abstract-q-c-640-480-10.jpg">
+                </div>
+                <a href="#!user"><img class="circle" src="http://lorempixel.com/output/people-q-c-640-480-9.jpg"></a>
+                <a href="#!name"><span class="white-text name">John Doe</span></a>
+                <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+              </div>
+            </li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Catálogo</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+    <h4 class="center-align">Formulario de Registro</h4>
+    <form action="/insertar" method="POST">
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <input type="text" name="nombre" id="nombre" class="validate" required>
+          <label for="nombre">Nombre</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" name="apellido" id="apellido" class="validate" required>
+          <label for="apellido">Apellido</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="email" name="correo" id="correo" class="validate" required>
+          <label for="correo" data-error="Correo inválido" data-success="Válido">Correo electrónico</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="password" name="contrasena" id="contrasena" class="validate" required>
+          <label for="contrasena">Contraseña</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" name="telefono" id="telefono">
+          <label for="telefono">Teléfono</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" name="direccion" id="direccion">
+          <label for="direccion">Dirección</label>
+        </div>
+        <div class="input-field col s12 m6">
+          <input type="text" name="pais" id="pais" required>
+          <label for="pais">País</label>
+        </div>
+      </div>
+
+      <div class="center-align">
+        <button class="btn waves-effect waves-light cyan" type="submit" name="action">
+          Registrarse
+          <i class="material-icons right">send</i>
+        </button>
+      </div>
+    </form>
+
+    <!-- Tabla de ejemplo (solo si ya hay registros) -->
+    <table class="striped responsive-table" style="margin-top: 40px;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>País</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% usuarios.forEach(function(usuario) { %>
+          <tr>
+            <td><%= usuario.id %></td>
+            <td><%= usuario.nombre %></td>
+            <td><%= usuario.apellido %></td>
+            <td><%= usuario.correo %></td>
+            <td><%= usuario.pais %></td>
+          </tr>
+        <% }); %>
+      </tbody>
+    </table>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="page-footer cyan">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m6">
+          <h5 class="white-text">Tienda Gamer</h5>
+          <p class="grey-text text-lighten-4">Proyecto académico con fines de práctica.</p>
+        </div>
+        <div class="col s12 m6">
+          <h5 class="white-text">Enlaces</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#">Ayuda</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Términos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2025 Tienda Gamer
+        <a class="grey-text text-lighten-4 right" href="#!">Más enlaces</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".button-collapse").sideNav();
+    });
+  </script>
+</body>
+</html>

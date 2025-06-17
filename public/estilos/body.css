@@ -1,0 +1,638 @@
+
+body {
+
+    background-color: #0d1321;
+  }
+  
+  ul li a {
+    padding: 0 10px;
+  }
+
+ .bienvenida-section {
+  margin-top: 70px;
+  padding: 60px 30px;
+  border-radius: 12px;
+  background-color: #0d1321;
+  text-align: center;
+}
+ .mensaje_bienvenida {
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: #edede9;
+  margin-bottom: 30px;
+}
+
+  
+.quizas_interese {
+  font-size: 1.5rem;
+  font-weight: 300;
+  color: #edede9;
+  margin-bottom: 20px;
+}
+  
+  .populares_links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 30px;
+}
+  
+  .card {
+    height: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .titulo-carrusel {
+    text-align: center;
+    font-size: 2rem;
+    color: #ffffff;
+    margin-bottom: 20px;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.7);
+  }
+  
+  .card-content {
+    flex-grow: 1;
+    overflow: hidden;
+    min-height: 100px;
+    padding-top: 10px;
+  }
+  
+  .card-content h5 {
+    font-size: 1.25rem;
+    margin-bottom: 8px;
+    margin-top: -10px;
+    min-height: 48px;
+  }
+  
+  .card-content p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.3;
+  }
+  .contenido-centrado {
+    max-width: 1200px; 
+    margin: 0 auto;
+    padding: 0 20px; 
+  }
+  .contenedor_imagenes {
+    width: 100%;
+    max-width: 1000px;
+    aspect-ratio: 16/9;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    border: 5px solid white;
+    border-radius: 10px;
+    position: relative;
+    box-sizing: border-box;
+  }
+  
+  .imagenes_juegos {
+    display: flex;
+    width: 500%;
+    height: 100%;
+    animation: cambio 15s infinite linear;
+  }
+  
+  .imagen_texto {
+    flex: 0 0 20%;       
+    position: relative;
+    height: auto;
+    box-sizing: border-box;
+  }
+
+.imagen_texto img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+.imagen_transparencia {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 20%;
+  background: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+}
+.texto {
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  color: #e5e5e5;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+@keyframes cambio {
+  0%, 16% { transform: translateX(0); }
+  20%, 36% { transform: translateX(-20%); }
+  40%, 56% { transform: translateX(-40%); }
+  60%, 76% { transform: translateX(-60%); }
+  80%, 96% { transform: translateX(-80%); }
+  100% { transform: translateX(-100%); }
+}      
+.carrusel-marco {
+  background-color: rgba(255, 255, 255, 0.05);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(255, 255, 255, 0.1);
+  width: 100%;                          
+  max-width: 1000px;
+  margin: 40px auto;
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;              
+}
+
+.contenido-centrado.lanzamientos {
+  margin-top: 80px;
+}
+.card .card-image img {
+  width: 100%;
+  height: 150px; 
+  object-fit: cover;
+}
+.juegos2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+}
+/*.categories-bar {
+  padding: 10px 0;
+}
+*/
+.categories-menu {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  margin: 0;
+}
+
+.categories-menu li a {
+  color: #4a148c; 
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+
+.triangulo-descuento {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 12px;
+  border-radius: 5px;
+  z-index: 5;
+}
+
+/*AASSASSINS CCREDO SOMBRAS*/
+
+.galeria {
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px; 
+  padding: 20px;
+}
+
+.galeria img {
+  width: 200px; 
+  height: auto;
+  object-fit: cover;
+  opacity: 0.8;
+  transition: 0.5s ease;
+  border-radius: 10px; 
+}
+
+.galeria img:hover {
+  cursor: pointer;
+  width: 300px;
+  opacity: 1;
+  filter: contrast(120%);
+  transform: scale(1.1); 
+}
+
+
+.card-image-ass img {
+  border: 2px solid #f8f9fa;
+  border-radius: 10px;
+}
+
+@media (max-width: 600px) {
+  .carrusel-marco {
+    padding: 10px;
+    margin: 10px;
+  }
+
+  .contenedor_imagenes {
+    border-width: 2px;
+    aspect-ratio: 16/9;
+  }
+
+  .texto {
+    font-size: 16px;
+  }
+}
+
+carousel {
+  width: 100%;
+  max-width: 1000px;
+  aspect-ratio: 16/9;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #181828;
+}
+carousel .carousel-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+@media (max-width: 600px) {
+  .carousel {
+    height: 220px;
+  }
+}
+
+
+
+
+
+.info-imagen {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(30, 30, 40, 0.65); /* Más opaco y menos negro puro */
+  padding: 12px 18px;
+  border-radius: 14px;
+  color: #e0e0e0;
+  max-width: 90%;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.18);
+  backdrop-filter: blur(2px); /* Difumina el fondo para suavizar el contraste */
+  font-family: 'Roboto', sans-serif;
+  transition: background 0.3s;
+}
+.info-imagen h5 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #fff;
+  font-weight: bold;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+}
+.info-imagen p {
+  margin: 5px 0 0;
+  font-size: 0.95rem;
+  color: #e0e0e0;
+}
+.info-imagen .precio {
+  margin-top: 5px;
+  font-weight: bold;
+  color: #00e5ff;
+}
+.carousel .indicators {
+  bottom: 18px;
+  z-index: 2;
+}
+.carousel .indicators .indicator-item {
+  background-color: rgba(255,255,255,0.35); /* Más suave */
+  width: 12px;
+  height: 12px;
+  margin: 0 4px;
+  transition: background 0.3s, transform 0.3s;
+  box-shadow: none;
+}
+.carousel .indicators .indicator-item.active {
+  background-color: #7c4dff; /* Color principal, más suave */
+  transform: scale(1.2);
+  box-shadow: 0 0 8px #7c4dff55;
+}
+
+@media (max-width: 600px) {
+  .mensaje_bienvenida {
+    font-size: 1.8rem;
+  }
+
+  .quizas_interese {
+    font-size: 1.2rem;
+  }
+
+  .chip {
+    font-size: 0.85rem;
+    padding: 0 10px;
+  }
+
+  .carousel {
+    height: 300px;
+  }
+
+  .info-imagen {
+    font-size: 0.8rem;
+    padding: 6px 10px;
+  }
+}
+
+
+.playstation-hero {
+  background-image: url("/rs/ps5-product-thumbnail-01-en-14sep21.webp");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 90vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.playstation-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0,0,0,0.4), rgba(0,0,0,0.8));
+  z-index: 1;
+}
+
+.hero-contenido {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: white;
+  padding: 30px;
+  max-width: 900px;
+}
+
+.hero-contenido h1 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
+}
+
+.hero-contenido p {
+  font-size: clamp(1.2rem, 2vw, 1.6rem);
+  margin-bottom: 30px;
+  color: #e0e0e0;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.7);
+}
+
+.btn-hero {
+  display: inline-block;
+  background-color: #4a148c;
+  color: white;
+  padding: 12px 28px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+}
+
+.btn-hero:hover {
+  background-color: #7c4dff;
+  transform: scale(1.05);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.game-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  background-color: #1e1e2f;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.game-card .card-image img {
+  width: 100%;
+  height: auto; 
+  object-fit: contain; 
+  display: block;
+  background-color: #000; 
+  padding: 10px; 
+}
+
+
+.game-card .card-content {
+  padding: 15px;
+  color: #fff;
+  background-color: #1e1e2f;
+}
+
+.game-card h5 {
+  font-size: 1.2rem;
+  margin-bottom: 15px;
+  font-weight: bold;
+}
+
+.jugar-btn {
+  background-color: #0d47a1; /* Azul PlayStation */
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.jugar-btn:hover {
+  background-color: #1565c0;
+  transform: scale(1.05);
+}
+
+
+
+.custom-btn {
+  background: linear-gradient(135deg, #1e88e5, #42a5f5);
+  color: white;
+  font-weight: bold;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  transition: background 0.3s ease, transform 0.2s ease;
+  padding: 0 25px;
+}
+
+.custom-btn:hover {
+  background: linear-gradient(135deg, #1565c0, #1e88e5);
+  transform: scale(1.05);
+}
+
+.custom-btn i {
+  margin-left: 10px;
+}
+
+
+
+/*responsibidad ejemplo ia md okas*/
+
+
+
+
+.carousel-fullwidth {
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  z-index: 10;
+  background: #181828;
+  /* Elimina aspect-ratio aquí */
+}
+
+/* Carrusel de imágenes */
+.carousel-fullwidth {
+  width: 100vw;
+  min-width: 100vw;
+  max-width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  overflow: hidden;
+  z-index: 10;
+  background: #181828;
+}
+
+.carousel.carousel-slider {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  min-width: 100vw !important;
+  height: calc(100vw / 2.2); /* Proporción más alta para que la imagen se vea grande */
+  min-height: 220px;
+  max-height: 520px;
+  transition: height 0.3s;
+}
+
+@media (max-width: 900px) {
+  .carousel.carousel-slider {
+    height: calc(100vw / 1.4);
+    max-height: 380px;
+  }
+}
+@media (max-width: 600px) {
+  .carousel.carousel-slider {
+    height: calc(100vw / 1.05);
+    min-height: 180px;
+    max-height: 340px;
+  }
+}
+
+.carousel .carousel-item {
+  width: 100vw !important;
+  min-width: 100vw !important;
+  max-width: 100vw !important;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel .carousel-item img.carousel-img-contain {
+  width: 100vw;
+  max-width: 100vw;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  margin: 0;
+  padding: 0;
+  display: block;
+  background: #181828;
+}
+
+/* Carrusel de logos overlay */
+/* Carrusel de logos overlay: SIEMPRE relativo al carrusel, nunca fixed */
+.carousel-logos-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100%;
+  z-index: 20;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  /* Elimina transform y height: 0 */
+}
+.carousel-logos {
+  position: absolute;
+  width: 100px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  pointer-events: none;
+  top: 700px;
+  margin-left: 100px; 
+}
+
+/* El logo SIEMPRE centrado verticalmente y pegado al lado izquierdo */
+.logo-slide {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(0, -50%);
+  /* OJO: la sintaxis correcta es translateY(-50%) */
+  transform: translateY(-50%);
+  width: clamp(360px, 18vw, 360px);
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+
+.logo-slide.active {
+  opacity: 1;
+  z-index: 2;
+}
+
+@media (max-width: 900px) {
+  .logo-slide {
+    width: clamp(80px, 28vw, 160px);
+        max-height: 120px;
+    margin-left: 0 !important;   /* Sin margen izquierdo */
+    left: 0 !important;          /* Asegura que esté alineado al borde */
+  }
+}
+@media (max-width: 600px) {
+  .logo-slide {
+    width: clamp(100px, 60vw, 200px);
+    max-height: 120px;
+    margin-left: 0 !important;   /* Sin margen izquierdo */
+    left: 0 !important;          /* Asegura que esté alineado al borde */
+  }
+}

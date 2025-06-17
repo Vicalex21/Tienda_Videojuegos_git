@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <title>Editar Juego</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+</head>
+<body>
+  <div class="container" style="margin-top:40px;">
+    <h4>Editar Juego</h4>
+    <form action="/actualizarJuego/<%= juego.id %>" method="post">
+      <div class="input-field">
+        <input type="text" name="nombre" value="<%= juego.nombre %>" required>
+        <label class="active">Nombre</label>
+      </div>
+      <div class="input-field">
+        <input type="number" name="precio" value="<%= juego.precio %>" required>
+        <label class="active">Precio</label>
+      </div>
+      <div class="input-field">
+        <select name="formato" required>
+          <option value="fisico" <%= juego.formato === 'fisico' ? 'selected' : '' %>>Físico</option>
+          <option value="digital" <%= juego.formato === 'digital' ? 'selected' : '' %>>Digital</option>
+        </select>
+        <label>Formato</label>
+      </div>
+      <div class="input-field">
+        <input type="number" name="stock" value="<%= juego.stock %>">
+        <label class="active">Stock</label>
+      </div>
+      <div class="input-field">
+        <select name="plataforma_id" required>
+          <% plataformas.forEach(function(p) { %>
+            <option value="<%= p.id %>" <%= juego.plataforma_id === p.id ? 'selected' : '' %>><%= p.nombre %></option>
+          <% }) %>
+        </select>
+        <label>Plataforma</label>
+      </div>
+      <div class="input-field">
+        <input type="date" name="fecha_lanzamiento" value="<%= juego.fecha_lanzamiento ? juego.fecha_lanzamiento.toISOString().slice(0,10) : '' %>">
+        <label class="active">Fecha de lanzamiento</label>
+      </div>
+      <div class="input-field">
+        <select name="distribuidor_id" required>
+          <% distribuidores.forEach(function(d) { %>
+            <option value="<%= d.id %>" <%= juego.distribuidor_id === d.id ? 'selected' : '' %>><%= d.nombre %></option>
+          <% }) %>
+        </select>
+        <label>Distribuidor</label>
+      </div>
+      <div class="input-field">
+        <select name="desarrollador_id" required>
+          <% desarrolladores.forEach(function(d) { %>
+            <option value="<%= d.id %>" <%= juego.desarrollador_id === d.id ? 'selected' : '' %>><%= d.nombre %></option>
+          <% }) %>
+        </select>
+        <label>Desarrollador</label>
+      </div>
+      <div class="input-field">
+        <input type="number" name="peso_mb" value="<%= juego.peso_mb %>">
+        <label class="active">Peso (MB)</label>
+      </div>
+      <div class="input-field">
+        <select name="online">
+          <option value="1" <%= juego.online ? 'selected' : '' %>>Sí</option>
+          <option value="0" <%= !juego.online ? 'selected' : '' %>>No</option>
+        </select>
+        <label>¿Online?</label>
+      </div>
+      <div class="input-field">
+        <input type="text" name="esrb" value="<%= juego.esrb %>">
+        <label class="active">ESRB</label>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">Guardar cambios</button>
+      <a href="/agregarJuegos" class="btn grey">Cancelar</a>
+    </form>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $('select').material_select();
+    });
+  </script>
+
+
+
+
+
+</body>
+</html>

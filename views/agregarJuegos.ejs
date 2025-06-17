@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Administrar Juegos - Infinity Level</title>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      background: linear-gradient(135deg, #181828 0%, #23234a 100%);
+      color: #f3f3f3;
+      font-family: 'Roboto', Arial, sans-serif;
+    }
+    main { flex: 1 0 auto; }
+    nav, .page-footer { background: #181828 !important; }
+    .card, .collapsible, .collapsible-body { border-radius: 10px; }
+    .btn, .btn-small, .btn-large {
+      background: linear-gradient(90deg, #7c4dff 0%, #00e5ff 100%);
+      color: #fff !important;
+      font-family: 'Orbitron', 'Russo One', Arial, sans-serif;
+      letter-spacing: 2px;
+      border: none;
+      box-shadow: 0 0 10px #7c4dff, 0 0 20px #00e5ff;
+      transition: background 0.3s, box-shadow 0.3s;
+      border-radius: 6px;
+    }
+    .btn:hover, .btn-small:hover, .btn-large:hover {
+      background: linear-gradient(90deg, #00e5ff 0%, #7c4dff 100%);
+      box-shadow: 0 0 20px #00e5ff, 0 0 40px #7c4dff;
+    }
+    table.striped > tbody > tr:nth-child(odd) { background-color: #23234a !important; }
+    table.striped > tbody > tr:nth-child(even) { background-color: #181828 !important; }
+    th, td { color: #fff !important; font-size: 14px; }
+    thead { background-color: #23234a; }
+    .responsive-table { overflow-x: auto; }
+    .card-title { font-weight: 500; color: #fff; }
+    .material-icons { color: #00e5ff !important; }
+    .img-thumb { width: 60px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="deep-purple darken-1">
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="#" class="brand-logo">Infinity Level</a>
+          <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/agregarJuegos">Agregar Juego</a></li>
+            <li><a href="/menu">Volver al Menú</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-menu">
+            <li><a href="/agregarJuegos">Agregar Juego</a></li>
+            <li><a href="/menu">Volver al Menú</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container" style="margin-top: 60px;">
+    <!-- Formulario para agregar juego -->
+<div class="card z-depth-2" style="background-color: #23234a; border-radius: 10px; margin-bottom: 30px;">
+  <div class="card-content">
+    <span class="card-title center-align" style="font-size: 1.5rem;">Agregar Nuevo Juego</span>
+    <form action="/insertarJuego" method="post" enctype="multipart/form-data">
+      <div class="row">
+        <div class="input-field col s12 m6">
+          <input type="text" name="nombre" required>
+          <label>Nombre</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <input type="number" name="precio" required>
+          <label>Precio</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <select name="formato" required>
+            <option value="" disabled selected>Elige formato</option>
+            <option value="fisico">Físico</option>
+            <option value="digital">Digital</option>
+          </select>
+          <label>Formato</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <input type="number" name="stock">
+          <label>Stock</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <select name="plataforma_id" required>
+            <option value="" disabled selected>Elige plataforma</option>
+            <% plataformas.forEach(function(p) { %>
+              <option value="<%= p.id %>"><%= p.nombre %></option>
+            <% }) %>
+          </select>
+          <label>Plataforma</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <input type="date" name="fecha_lanzamiento">
+          <label class="active">Fecha de lanzamiento</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <select name="distribuidor_id" required>
+            <option value="" disabled selected>Elige distribuidor</option>
+            <% distribuidores.forEach(function(d) { %>
+              <option value="<%= d.id %>"><%= d.nombre %></option>
+            <% }) %>
+          </select>
+          <label>Distribuidor</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <select name="desarrollador_id" required>
+            <option value="" disabled selected>Elige desarrollador</option>
+            <% desarrolladores.forEach(function(d) { %>
+              <option value="<%= d.id %>"><%= d.nombre %></option>
+            <% }) %>
+          </select>
+          <label>Desarrollador</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <input type="number" name="peso_mb">
+          <label>Peso (MB)</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <select name="online">
+            <option value="1">Sí</option>
+            <option value="0">No</option>
+          </select>
+          <label>¿Online?</label>
+        </div>
+        <div class="input-field col s12 m3">
+          <input type="text" name="esrb">
+          <label>ESRB</label>
+        </div>
+          <div class="input-field col s12 m6">
+    <input type="file" name="imagenFile" accept="image/*">
+    <label style="top: -20px;">Imagen (opcional)</label>
+  </div>
+      </div>
+      <button class="btn waves-effect waves-light" type="submit">Agregar Juego</button>
+    </form>
+  </div>
+</div>
+
+
+
+
+
+    <div class="card z-depth-2" style="background-color: #23234a; border-radius: 10px;">
+      <div class="card-content">
+        <span class="card-title center-align" style="font-size: 1.8rem;">Listado de Juegos</span>
+        <div class="responsive-table">
+          <table class="striped highlight centered">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nombre</th>
+                <th>Precio</th>
+                <th>Formato</th>
+                <th>Stock</th>
+                <th>Plataforma</th>
+                <th>Fecha Lanzamiento</th>
+                <th>Distribuidor</th>
+                <th>Desarrollador</th>
+                <th>Peso</th>
+                <th>Online</th>
+                <th>ESRB</th>
+                <th>Imagen</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% juegos.forEach(function(juego) { %>
+                <tr>
+                  <td><%= juego.id %></td>
+                  <td><%= juego.nombre %></td>
+                  <td>$<%= juego.precio %></td>
+                  <td><%= juego.formato %></td>
+                  <td><%= juego.stock !== null ? juego.stock : '-' %></td>
+                  <td><%= juego.plataforma %></td>
+                  <td><%= juego.fecha_lanzamiento ? juego.fecha_lanzamiento.toString().slice(0,10) : '-' %></td>
+                  <td><%= juego.distribuidor %></td>
+                  <td><%= juego.desarrollador %></td>
+                  <td>
+                    <% if (juego.peso_mb >= 1024) { %>
+                      <%= (juego.peso_mb / 1024).toFixed(2) %> GB
+                    <% } else { %>
+                      <%= juego.peso_mb %> MB
+                    <% } %>
+                  </td>
+                  <td><%= juego.online ? 'Sí' : 'No' %></td>
+                  <td><%= juego.esrb %></td>
+                  <td>
+                    <% if (juego.imagen) { %>
+                      <img src="<%= juego.imagen %>" class="img-thumb" alt="carátula">
+                    <% } else { %>
+                      -
+                    <% } %>
+                  </td>
+                  <td>
+                    <form action="/editarJuego/<%= juego.id %>" method="get" style="display:inline;">
+                      <button class="waves-effect waves-light btn blue" type="submit" title="Editar">
+                        <i class="material-icons">edit</i>
+                      </button>
+                    </form>
+                    <form action="/borrarJuego" method="post" style="display:inline;">
+                      <input type="hidden" name="idjuego" value="<%= juego.id %>">
+                      <button class="waves-effect waves-light btn red" type="submit" title="Borrar" onclick="return confirm('¿Seguro que deseas borrar este juego?')">
+                        <i class="material-icons">delete</i>
+                      </button>
+                    </form>
+                  </td>
+                </tr>
+              <% }); %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="page-footer deep-purple darken-1">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 m4 l4">
+          <h5 class="white-text">Empresa</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Contacto</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Términos y condiciones</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Política de Privacidad</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Preguntas Frecuentes</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Derechos del consumidor</a></li>
+          </ul>
+        </div>
+        <div class="col s12 m4 l4">
+          <h5 class="white-text">Horario de Atención</h5>
+          <ul>
+            <li><span class="grey-text text-lighten-3">Lunes a Viernes</span></li>
+            <li><span class="grey-text text-lighten-3">09:00 AM a 18:00 PM</span></li>
+            <li><span class="grey-text text-lighten-3">Email: serviciocliente@infinitylevel.cl</span></li>
+          </ul>
+        </div>
+        <div class="col s12 m4 l4">
+          <h5 class="white-text">Mi Cuenta</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Historial de Compra</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Favoritos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mi Cuenta</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mis Direcciones</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="redes-sociales-footer">
+        <li><a href="#"><i class="fa-brands fa-tiktok"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa-brands fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+    <div class="footer-copyright">
+      <div class="container">
+        © 2025 Infinity Level
+        <a class="grey-text text-lighten-4 right" href="#!"></a>
+      </div>
+    </div>
+  </footer>
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script>
+    $("document").ready(function(){
+      $(".button-collapse").sideNav();
+    });
+  </script>
+  <script>
+  $(document).ready(function(){
+    $('select').material_select();
+    $(".button-collapse").sideNav();
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Inicio de Sesión - Infinity Level</title>
+  <!-- Enlace al archivo CSS -->
+  <link rel="stylesheet" href="../estilos/inicio.css">
+</head>
+<body>
+
+  <!-- Fondo de video que se reproduce en bucle -->
+  <video autoplay muted loop id="video-fondo">
+    <source id="video-source" src="../videos/batman.mp4" type="video/mp4">
+  </video>
+
+  <!-- Contenedor principal del login -->
+  <div class="wrapper">
+
+    <!-- Espacio reservado para el logo -->
+    <!-- Espacio reservado para el logo -->
+<div class="logo">
+  <!-- Imagen del logo -->
+  <img src="/rs/logo-tienda.png" alt="Logo Infinity Level" class="logo-img">
+  <!-- Título del sitio -->
+  <h1>Infinity Level</h1>
+</div>
+
+
+    <!-- Formulario de inicio de sesión -->
+    <form id="loginForm">
+      <div class="input-field">
+        <input type="text" id="usuar" required>
+        <label for="usuar">Ingresa tu Email</label>
+      </div>
+
+      <div class="input-field">
+        <input type="password" id="password" required>
+        <label for="password">Ingresa tu Contraseña</label>
+      </div>
+
+      <div class="form-actions">
+        <button type="submit" class="btn-ingresar">Ingresar</button>
+        <a href="#" class="btn-accion secundaria">Recuperar Contraseña</a>
+        <a href="/home" class="btn-accion secundaria">¿No tienes una cuenta? ¡Regístrate!</a>
+      </div>
+    </form>
+
+    <!-- Botón para cambiar el fondo del video -->
+    <button onclick="cambiarFondo()" class="btn-fondo">Cambiar fondo</button>
+
+  </div>
+
+  <!-- Script para cambiar fondo de video -->
+  <script>
+    let fondos = [
+      "../videos/batman.mp4",
+      "../videos/Ferrari.mp4",
+      "../videos/Star-Wars.mp4"
+    ];
+    let indexFondo = 0;
+
+    function cambiarFondo() {
+      indexFondo = (indexFondo + 1) % fondos.length;
+      let video = document.getElementById("video-fondo");
+      let source = document.getElementById("video-source");
+      source.src = fondos[indexFondo];
+      video.load();
+      video.play();
+    }
+  </script>
+
+  <!-- Script para enviar el formulario vía POST -->
+  <script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const usuar = document.getElementById('usuar').value;
+      const password = document.getElementById('password').value;
+
+      fetch('/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: `usuar=${encodeURIComponent(usuar)}&password=${encodeURIComponent(password)}`
+      })
+      .then(res => {
+        if (res.ok) {
+          window.location.href = '/menu';
+        } else {
+          return res.text().then(msg => alert(msg));
+        }
+      })
+      .catch(() => alert('Error al conectar con el servidor'));
+    });
+  </script>
+
+</body>
+</html>

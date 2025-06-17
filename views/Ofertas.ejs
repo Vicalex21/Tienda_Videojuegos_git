@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ofertas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+    <link rel="stylesheet" href="../estilos/body.css">
+    <link rel="stylesheet" href="../estilos/redes.css">
+    <style>
+        .triangulo-descuento {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: red;
+            color: white;
+            font-weight: bold;
+            padding: 5px 10px;
+            font-size: 12px;
+            border-radius: 5px;
+            z-index: 5;
+        }
+    </style>
+</head>
+<header>
+    <nav class="deep-purple darken-1">
+        <div class="container">
+            <div class="nav-wrapper">
+                <div class="row" style="margin-bottom: 0; align-items: center; display: flex; flex-wrap: wrap;">
+
+                    <div class="col s2" style="display: flex; align-items: center; gap: 10px;">
+
+                        <a href="Menu"><img class="imagen_logo"
+                                src="/rs/logo-tienda.png"
+                                style="height: 60px; width: auto; max-width: 100%;"></a>
+                    </div>
+                    <div class="col s4" style="display: flex; align-items: center; justify-content: center;">
+                        <form style="margin: 0; width: 100%;">
+                            <div class="input-field" style="margin: 0;">
+                                <input id="buscar" type="text" placeholder="Buscar en la Tienda"
+                                    style="padding: 0 15px; width: 290px;">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col s6" style="display: flex; align-items: center; justify-content: flex-end;">
+                        <ul class="right hide-on-med-and-down">
+                            <li><a href="#">Mis Videojuegos</a></li>
+                            <li><a href="#">Amigos</a></li>
+                            <li>
+                                <a href="#modal-carrito" id="ver-carrito" class="modal-trigger">
+                                    Carrito <span id="cart-count" class="new badge" data-badge-caption="">0</span>
+                                </a>
+                            </li>
+                            <li><a href="#">Ajustes</a></li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<body>
+    <main>
+        <div class="container" style="margin-top:40px;">
+            <h3 class="juegos2 white-text center-align" style="margin-top: 30px; padding-block-start: 50px;">
+                Ofertas de Juegos
+            </h3>
+            <div class="row">
+                <% juegos.forEach(function(juego) { %>
+                    <div class="col s12 m6 l3">
+                        <div class="card">
+                            <div class="card-image" style="position: relative;">
+                                <div class="triangulo-descuento">-20%</div>
+                                <img src="<%= juego.imagen %>" alt="<%= juego.nombre %>">
+                            </div>
+                            <div class="card-content center-align">
+                                <h5 style="margin-bottom: 10px;">
+                                    <%= juego.nombre %>
+                                </h5>
+                                <div style="margin-bottom: 10px;">
+                                    <span style="text-decoration: line-through; color: #d43256; margin-right: 8px;">
+                                        $<%= (juego.precio_original || (juego.precio * 1.25)).toLocaleString() %>
+                                    </span>
+                                    <span style="font-size: 1.3rem; font-weight: bold; color: #333;">
+                                        $<%= juego.precio.toLocaleString() %>
+                                    </span>
+                                </div>
+                                <div class="plataforma-label" style="color:#bdbdbd; font-size:0.95rem;">
+                                    <%= juego.plataforma %>
+                                </div>
+                            </div>
+                            <div class="card-action"
+                                style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+                                <a href="#" class="btn-add-cart" data-nombre="<%= juego.nombre %>"
+                                    data-precio="<%= juego.precio %>">Añadir al carro</a>
+                                <a href="#">Ver más</a>
+                            </div>
+                        </div>
+                    </div>
+                    <% }) %>
+            </div>
+        </div>
+
+     
+    </main>
+
+       <div id="modal-carrito" class="modal">
+            <div class="modal-content">
+                <h4>Mi Carrito</h4>
+                <ul id="cart-list"></ul>
+                <h5>Total: $<span id="cart-total">0</span></h5>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">Cerrar</a>
+            </div>
+        </div>
+        
+    <footer class="page-footer deep-purple darken-1">
+        <div class="container">
+            <div class="row">
+
+                <div class="col s12 m4 l4">
+                    <h5 class="white-text">Empresa</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contacto</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Términos y condiciones</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Política de Privacidad</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Preguntas Frecuentes</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Derechos del consumidor</a></li>
+                    </ul>
+                </div>
+
+                <div class="col s12 m4 l4">
+                    <h5 class="white-text">Horario de Atención</h5>
+                    <ul>
+                        <li><span class="grey-text text-lighten-3">Lunes a Viernes</span></li>
+                        <li><span class="grey-text text-lighten-3">09:00 AM a 18:00 PM</span></li>
+                        <li><span class="grey-text text-lighten-3">Email: serviciocliente@infinitylevel.cl</span></li>
+                    </ul>
+                </div>
+
+                <div class="col s12 m4 l4">
+                    <h5 class="white-text">Mi Cuenta</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Historial de Compra</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Favoritos</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Mi Cuenta</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Mis Direcciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="redes-sociales-footer">
+                <li><a href="#"><i class="fa-brands
+        fa-tiktok"></i></a></li>
+                <li><a href="#"><i class="fa-brands
+        fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands
+        fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands
+        fa-whatsapp"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 Infinity Level
+                <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+        </div>
+    </footer>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script>
+$(document).ready(function(){
+    // Inicializa el modal
+    $('.modal').modal();
+
+    let carrito = [];
+
+    function actualizarContador() {
+        $('#cart-count').text(carrito.length);
+    }
+
+    function mostrarCarrito() {
+        const lista = $('#cart-list');
+        lista.empty();
+        let total = 0;
+        if (carrito.length === 0) {
+            lista.append('<li>No hay productos en el carrito.</li>');
+        } else {
+            carrito.forEach(function(item, idx){
+                total += parseInt(item.precio);
+                lista.append(
+                    `<li><b>${item.nombre}</b> - $${item.precio} <a href="#" onclick="eliminarDelCarrito(${idx})" style="color:red; margin-left:10px;">Eliminar</a></li>`
+                );
+            });
+        }
+        $('#cart-total').text(total);
+    }
+
+    // Añadir al carrito y mostrar toast
+    $('.btn-add-cart').click(function(e){
+        e.preventDefault();
+        const nombre = $(this).data('nombre');
+        const precio = $(this).data('precio');
+        carrito.push({ nombre, precio });
+        actualizarContador();
+        Materialize.toast(nombre + ' añadido al carrito', 2000, 'green');
+    });
+
+    // Abrir modal y mostrar carrito
+    $('#ver-carrito').click(function(){
+        mostrarCarrito();
+        $('#modal-carrito').modal('open');
+    });
+
+    // Eliminar del carrito (debe ser global para funcionar con onclick)
+    window.eliminarDelCarrito = function(idx){
+        carrito.splice(idx, 1);
+        mostrarCarrito();
+        actualizarContador();
+    }
+});
+</script>
+</body>
+
+</html>

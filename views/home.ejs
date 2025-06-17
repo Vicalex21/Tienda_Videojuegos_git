@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Registro de Usuario - Tienda Gamer</title>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron:700|Russo+One&display=swap" rel="stylesheet">
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+      background: linear-gradient(135deg, #181828 0%, #23234a 100%);
+      color: #f3f3f3;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+    .collapsible-header,
+    .collapsible-body {
+      background: rgba(30, 30, 50, 0.95);
+      color: #fff;
+    }
+
+    .input-field input,
+    .input-field label {
+      color: #fff !important;
+    }
+
+    .input-field input:focus {
+      border-bottom: 2px solid #00e5ff !important;
+      box-shadow: 0 1px 0 0 #00e5ff !important;
+    }
+
+    .btn,
+    .btn-large,
+    .btn-small {
+      background: linear-gradient(90deg, #7c4dff 0%, #00e5ff 100%);
+      color: #fff !important;
+      font-family: 'Orbitron', 'Russo One', Arial, sans-serif;
+      letter-spacing: 2px;
+      border: none;
+      box-shadow: 0 0 10px #7c4dff, 0 0 20px #00e5ff;
+      transition: background 0.3s, box-shadow 0.3s;
+    }
+
+    .btn:hover,
+    .btn-large:hover,
+    .btn-small:hover {
+      background: linear-gradient(90deg, #00e5ff 0%, #7c4dff 100%);
+      box-shadow: 0 0 20px #00e5ff, 0 0 40px #7c4dff;
+    }
+
+    nav,
+    .page-footer {
+      background: #181828 !important;
+    }
+
+    .material-icons,
+    label,
+    .collapsible-header i {
+      color: #00e5ff !important;
+      text-shadow: 0 0 5px #7c4dff;
+    }
+
+    .collapsible-header.active {
+      background: #23234a !important;
+    }
+
+    .card,
+    .collapsible,
+    .collapsible-body {
+      border-radius: 10px;
+    }
+
+    table.striped>tbody>tr:nth-child(odd) {
+      background-color: #23234a !important;
+    }
+
+    table.striped>tbody>tr:nth-child(even) {
+      background-color: #181828 !important;
+    }
+
+    th,
+    td {
+      color: #fff !important;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAV -->
+  <header>
+    <nav class="deep-purple darken-1">
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="#" class="brand-logo"></a>
+          <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Tengo una Cuenta</a></li>
+            <li><a href="#">Recuperar Contraseña</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-menu">
+            <li>
+              <div class="userView">
+                <div class="background">
+                  <img src="http://lorempixel.com/output/abstract-q-c-640-480-10.jpg">
+                </div>
+                <a href="#!user"><img class="circle" src="http://lorempixel.com/output/people-q-c-640-480-9.jpg"></a>
+                <a href="#!name"><span class="white-text name">John Doe</span></a>
+                <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+              </div>
+            </li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Catálogo</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- MAIN -->
+  <main class="container">
+    <h4 class="center-align">Formulario de Registro</h4>
+    <form id="registroForm">
+      <ul class="collapsible popout">
+        <li>
+          <div class="collapsible-header"><i class="material-icons">person</i>Datos Personales</div>
+          <div class="collapsible-body">
+            <div class="row">
+              <div class="input-field col s12 m6">
+                <input type="text" name="nombre" id="nombre" class="validate" required>
+                <label for="nombre">Nombre</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input type="text" name="apellido" id="apellido" class="validate" required>
+                <label for="apellido">Apellido</label>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">mail</i>Contacto</div>
+          <div class="collapsible-body">
+            <div class="row">
+              <div class="input-field col s12 m6">
+                <input type="email" name="correo" id="correo" class="validate" required>
+                <label for="correo" data-error="Correo inválido" data-success="Válido">Correo electrónico</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input type="text" name="telefono" id="telefono">
+                <label for="telefono">Teléfono</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input type="text" name="direccion" id="direccion">
+                <label for="direccion">Dirección</label>
+              </div>
+              <div class="input-field col s12 m6">
+                <input type="text" name="pais" id="pais" required>
+                <label for="pais">País</label>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="collapsible-header"><i class="material-icons">lock</i>Seguridad</div>
+          <div class="collapsible-body">
+            <div class="row">
+              <div class="input-field col s12 m6">
+                <input type="password" name="contrasena" id="contrasena" class="validate" required>
+                <label for="contrasena">Contraseña</label>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+      <div class="center-align" style="margin-top: 30px;">
+        <button class="btn waves-effect waves-light cyan" type="submit" name="action">
+          Registrarse
+          <i class="material-icons right">send</i>
+        </button>    <!--botones ia-->
+        <br><br>
+        <a href="/Inicio-sesion" class="btn waves-effect waves-light deep-purple accent-3 white-text" 
+          style="font-family: 'Orbitron', 'Russo One', Arial, sans-serif; letter-spacing: 2px; font-size: 1.1rem; box-shadow: 0 0 10px #7c4dff, 0 0 20px #00e5ff; border: 2px solid #00e5ff; margin-top: 10px; transition: background 0.3s, box-shadow 0.3s;">
+          <i class="material-icons left">keyboard_return</i>
+          Volver a Iniciar Sesión
+        </a>
+
+
+
+        <a href="/admin" class="btn waves-effect waves-light deep-purple accent-3 white-text" 
+          style="font-family: 'Orbitron', 'Russo One', Arial, sans-serif; letter-spacing: 2px; font-size: 1.1rem; box-shadow: 0 0 10px #7c4dff, 0 0 20px #00e5ff; border: 2px solid #00e5ff; margin-top: 10px; transition: background 0.3s, box-shadow 0.3s;">
+          <i class="material-icons left">keyboard_return</i>
+          Seccion admin (por trabajar)
+        </a>
+      </div>
+      </div>
+    </form>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.collapsible');
+        M.Collapsible.init(elems);
+      });
+
+      document.getElementById('registroForm').addEventListener('submit', function (e) {
+        e.preventDefault();
+
+        const formData = new URLSearchParams(new FormData(this));
+
+        fetch('/insertar', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded'
+          },
+          body: formData.toString()
+        })
+          .then(response => {
+            if (response.ok) {
+              window.location.href = '/menu';
+            } else {
+              alert('Error al registrar. Intenta de nuevo.');
+            }
+          })
+          .catch(error => {
+            console.error('Error:', error);
+            alert('Error al conectar con el servidor.');
+          });
+      });
+    </script>
+  </main>
+
+
+
+
+
+  <!-- Tabla de ejemplo (solo si ya hay registros) 
+    <table class="striped responsive-table" style="margin-top: 40px;">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Apellido</th>
+          <th>Correo</th>
+          <th>País</th>
+        </tr>
+      </thead>
+<tbody>
+  <% personas.forEach(function(persona) { %>   
+    <tr>
+      <td><%= persona.id %></td>
+      <td><%= persona.nombre %></td>
+      <td><%= persona.apellido %></td>
+      <td><%= persona.correo %></td>
+      <td><%= persona.pais %></td>
+    </tr>
+  <% }); %>
+</tbody>
+
+    </table>
+    -->
+  </main>
+
+
+  <footer class="page-footer deep-purple darken-1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col s12 m4 l4">
+          <h5 class="white-text">Empresa</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Contacto</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Términos y condiciones</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Política de Privacidad</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Preguntas Frecuentes</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Derechos del consumidor</a></li>
+          </ul>
+        </div>
+        <div class="col s12 m4 l4">
+          <h5 class="white-text">Horario de Atención</h5>
+          <ul>
+            <li><span class="grey-text text-lighten-3">Lunes a Viernes</span></li>
+            <li><span class="grey-text text-lighten-3">09:00 AM a 18:00 PM</span></li>
+            <li><span class="grey-text text-lighten-3">Email: serviciocliente@infinitylevel.cl</span></li>
+          </ul>
+        </div>
+        <div class="col s12 m4 l4">
+          <h5 class="white-text">Mi Cuenta</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Historial de Compra</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Favoritos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mi Cuenta</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mis Direcciones</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="redes-sociales-footer">
+        <li><a href="#"><i class="fa-brands
+        fa-tiktok"></i></a></li>
+        <li><a href="#"><i class="fa-brands
+        fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa-brands
+        fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa-brands
+        fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        © 2025 Infinity Level
+        <a class="grey-text text-lighten-4 right" href="#!"></a>
+      </div>
+    </div>
+  </footer>
+
+
+  <!-- JS -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $(".button-collapse").sideNav();
+    });
+  </script>
+</body>
+
+</html>

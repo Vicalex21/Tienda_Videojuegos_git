@@ -1,0 +1,1748 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>infinity level</title>
+  <!-- Material Icon CDN -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Materialize CSS CDN -->
+
+  <!-- Your custom styles -->
+  <link rel="stylesheet" href="../estilos/redes.css">
+  <link rel="stylesheet" href="../estilos/body.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+
+  <!-- Used as an example only to position the footer at the end of the page.
+    You can delete these styles or move it to your custom css file -->
+
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+
+    main {
+      flex: 1 0 auto;
+    }
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+  height: 60vh; 
+  margin-bottom: 0;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+.parallax-inner {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  overflow: hidden;
+}
+
+.parallax-inner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  filter: brightness(0.85) saturate(1.2) contrast(1.1);
+  transition: filter 0.4s, transform 0.4s;
+  border-radius: 20px;
+}
+
+.parallax-container:hover .parallax-inner img {
+  filter: brightness(1) saturate(1.4) contrast(1.2);
+  transform: scale(1.05);
+  box-shadow: 0 0 40px #7c4dff77;
+}
+.parallax-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: linear-gradient(180deg, rgba(40,0,80,0.25) 0%, rgba(0,0,0,0.45) 100%);
+  pointer-events: none;
+  border-radius: 20px;
+}
+
+
+
+
+
+
+
+.parallax1 {
+  height: 100vh;
+  width: 100%;
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  scroll-snap-align: start;
+ 
+}
+
+.parallax1.bg1 {
+  background-image: url("/rs/ps5-product-thumbnail-01-en-14sep21.webp");
+}
+.parallax1.bg2 {
+  background-image: url("/rs/mafia_definitive_edition.jpg");
+}
+.parallax1.bg3 {
+  background-image: url("/rs/cities_skyline.jpg");
+}
+
+.content1 {
+  color: #f0f0f0;
+  text-align: center;
+  padding: 50px;
+}
+.content1 h1 {
+  font-size: clamp(2rem, 5vw, 6rem);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 1. Columnas tipo 1/7 */
+@media only screen and (min-width: 1200px) {
+  .col.l1-7 {
+    width: 14.28%;
+    margin-left: 0 !important;
+  }
+}
+
+/* 2. Estilo más compacto para las cards */
+.compact-card {
+  height: 280px;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.compact-card .card-image img {
+  height: 120px;
+  object-fit: cover;
+}
+
+.compact-card .card-content {
+  padding: 10px;
+}
+
+.compact-card .card-content h6 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+
+.compact-card .price {
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+.compact-card .ver-btn {
+  font-size: 12px;
+  padding: 5px 10px;
+}
+
+
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <nav class="deep-purple darken-1">
+      <div class="container">
+        <div class="nav-wrapper">
+
+          <div class="row" style="margin-bottom: 0; align-items: center; display: flex; flex-wrap: wrap;">
+
+            <div class="col s2" style="display: flex; align-items: center; gap: 10px;">
+
+              <a href="#"><img class="imagen_logo"
+                  src="/rs/logo-tienda.png"
+                  style="height: 60px; width: auto; max-width: 100%;"></a>
+
+
+
+              <ul id="slide-out" class="sidenav">
+                <li>
+                  <div class="user-view">
+                    <div class="background">
+                      <img class="background-img"
+                        src="c:/Users/Acer/Desktop/Tienda_Videojuegos/public/rs/fondo-controlador-videojuego-futurista-espacio-texto_1017-54730.avif">
+                    </div>
+
+
+                    <a href="#user"><img class="circle"
+                        src="c:\Users\Acer\Desktop\Tienda_Videojuegos\public\rs\IMG_20230709_194456.jpg"></a>
+                    <a href="#name"><span class="white-text name">Vicho21</span></a>
+                    <a href="#email"><span class="white-text email">Vicalex21@gmail.com</span></a>
+                  </div>
+                </li>
+                <li>
+                  <a class="waves-effect" href="log.html">
+                    <i class="material-icons left">sentiment_satisfied</i>Perfil</a>
+                </li>
+                <li><a class="waves-effect" href="#!"><i class="material-icons left">group</i>Cambiar de
+                    prefil</a>
+                </li>
+                <li><a class="waves-effect" href="#!"><i class="material-icons left">person_add</i>Amigos
+                  </a>
+                </li>
+                <li><a class="waves-effect" href="#!"><i class="material-icons left">military_tech</i>Logros
+                  </a>
+                </li>
+
+                <li>
+                  <div class="divider"></div>
+                </li>
+                <li><a class="subheader">Ajustes</a></li>
+                <li>
+                  <a class="waves-effect" href="#!">
+                    <i class="material-icons left">laptop_windows</i>Sistema
+                  </a>
+                </li>
+                <li>
+                  <a class="waves-effect" href="#!">
+                    <i class="material-icons left">wifi</i>Red
+                  </a>
+                </li>
+                <li>
+                  <a class="waves-effect" href="#!">
+                    <i class="material-icons left">save</i>Espacio
+                  </a>
+                </li>
+                <li>
+                  <a class="waves-effect" href="#!">
+                    <i class="material-icons left">settings</i>Mas Ajustes
+                  </a>
+                </li>
+
+              </ul>
+
+
+              <a href="#" data-target="slide-out" class="sidenav-trigger show-on-large">
+                <i class="material-icons">menu</i>
+              </a>
+
+
+            </div>
+
+            <div class="col s4" style="display: flex; align-items: center; justify-content: center;">
+              <form style="margin: 0; width: 100%;">
+                <div class="input-field" style="margin: 0;">
+                  <input id="buscar" type="text" placeholder="Buscar en la Tienda"
+                    style="padding: 0 15px; width: 400px;">
+                </div>
+              </form>
+            </div>
+
+            <div class="col s6" style="display: flex; align-items: center; justify-content: flex-end;">
+              <ul class="right hide-on-med-and-down">
+                <li><a href="/MisJuegos">Mis Videojuegos</a></li>
+                <li><a href="#">Amigos</a></li>
+                <li><a href="#">Carrito</a></li>
+                <li><a href="#">Ajustes</a></li>
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+
+
+
+  </header>
+  <main>
+    <div class="container bienvenida-section z-depth-3">
+  <div class="section white-text center-align">
+    <h3 class="mensaje_bienvenida">
+      Bienvenido de vuelta.<br>Jugando hasta tarde Vicho21
+    </h3>
+
+    <h5 class="quizas_interese">Quizás te interese saber</h5>
+
+    <div class="populares_links">
+      <a href="#" class="chip blue darken-3 white-text">Más Vendido</a>
+      <a href="#" class="chip purple darken-3 white-text">Más Jugado</a>
+      <a href="#" class="chip indigo darken-4 white-text">Próximas Actualizaciones</a>
+      <a href="Ofertas" class="chip red darken-3 white-text">Ofertas</a>
+      <a href="#" class="chip deep-purple darken-2 white-text">Próximos Lanzamientos</a>
+    </div>
+    <br>
+    <br>
+
+
+
+
+<!-- Carrusel de logos overlay -->
+<div class="carousel-logos-overlay">
+  <div class="carousel-logos" id="carouselLogos">
+    <img src="/rs/1 logo elden.png" class="logo-slide" alt="Logo Elden Ring">
+    <img src="/rs/1 logo stellar.png" class="logo-slide" alt="Logo Stellar Blade">
+    <img src="/rs/1 logo hell.png" class="logo-slide" alt="Logo Hell">
+    <img src="/rs/1 logo wuwa.png" class="logo-slide" alt="Logo WuWa">
+    <img src="/rs/1 logo cyber.png" class="logo-slide" alt="Logo Cyberpunk">
+  </div>
+</div>
+<!-- Carrusel de imágenes -->
+<div class="carousel-fullwidth">
+  <div class="carousel carousel-slider" id="carousel" data-indicators="true">
+    <a class="carousel-item" href="#!">
+      <img class="carousel-img-contain" src="/rs/1 carrusel elden.png" alt="Imagen 1">
+    </a>
+    <a class="carousel-item" href="#!">
+      <img class="carousel-img-contain" src="/rs/1 Carrusel2_stellar_blade.png" alt="Imagen 2">
+    </a>
+    <a class="carousel-item" href="#!">
+      <img class="carousel-img-contain" src="/rs/1 carrusel hell.webp" alt="Imagen 3">
+    </a>
+    <a class="carousel-item" href="#!">
+      <img class="carousel-img-contain" src="/rs/1 carrusel wuwa.png" alt="Imagen 4">
+    </a>
+    <a class="carousel-item" href="#!">
+      <img class="carousel-img-contain" src="/rs/1 carrusel cyber.jpg" alt="Imagen 5">
+    </a>
+  </div>
+</div>
+<!-- ...existing code... -->
+  </div>
+</div>
+
+
+
+
+
+<div class="parallax-container parallax-gsap">
+  <div class="parallax-inner">
+    <img src="/rs/GTA6_nx5jsLI.webp" alt="Imagen de fondo">
+    <div class="parallax-overlay"></div>
+  </div>
+</div>
+
+<div class="section" style="
+  position: relative;
+  background: linear-gradient(135deg, #ff66c4, #6f00ff);
+  padding: 80px 20px;
+  text-align: center;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  overflow: hidden;
+">
+  <img src="/rs/1000_F_687306526_g4CSeebXpKi3yV4i49XVmNEbshSRtL37.jpg" alt="Palmeras izquierda" style="
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 100%;
+    opacity: 0.3;
+    pointer-events: none;
+    z-index: 0;
+  ">
+
+  <img src="/rs/1000_F_687306526_g4CSeebXpKi3yV4i49XVmNEbshSRtL37.jpg" alt="Palmeras derecha" style="
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100%;
+    opacity: 0.3;
+    transform: scaleX(-1); /* espejado */
+    pointer-events: none;
+    z-index: 0;
+  ">
+
+  <div class="container" style="position: relative; z-index: 1;">
+    <h1 style="
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      text-shadow: 0 0 15px #ff66c4, 0 0 25px #ff66c4;
+    ">
+      Grand Theft Auto VI
+    </h1>
+
+    <h5 style="
+      font-size: 1.5rem;
+      color: #ffe6ff;
+      text-shadow: 0 0 10px #ff99cc;
+    ">
+      Disponible en 2025
+    </h5>
+
+    <p style="
+      font-size: 1.2rem;
+      color: #fff;
+      max-width: 700px;
+      margin: 30px auto;
+      text-shadow: 0 0 10px #f0f;
+    ">
+      Vive una nueva generación de crimen, caos y libertad en Vice City. 
+      <strong>GTA VI</strong> regresa con un mundo abierto más vibrante, realista y brutal que nunca.
+      Experimenta la historia de <em>Lucía y Jason</em> mientras luchan por sobrevivir y dominar las calles.
+    </p>
+
+    <p style="font-size: 1.1rem; margin-top: 30px; text-shadow: 0 0 8px #ccf;">
+      <strong>Consolas:</strong> PlayStation 5, Xbox Series X|S
+    </p>
+
+    <p style="font-size: 1.3rem; font-weight: bold; margin-top: 10px; text-shadow: 0 0 8px #fff;">
+      Precio: $60.000 CLP
+    </p>
+
+    <a href="#" class="btn-large" style="
+      margin-top: 30px;
+      background-color: #ff66c4;
+      color: white;
+      box-shadow: 0 0 20px #ff66c4;
+    ">
+      Reservar Ahora
+    </a>
+  </div>
+</div>
+<div class="parallax-container parallax-gsap">
+  <div class="parallax-inner">
+    <img src="/rs/giphy.gif" alt="Imagen de fondo">
+  </div>
+</div>
+
+
+
+
+
+
+
+    <h2 class="titulo-carrusel">Juegos populares esta semana</h2>
+
+    <div class="carrusel-marco">
+      <div class="contenido-centrado">
+        <div class="contenedor_imagenes">
+          <div class="imagenes_juegos">
+            <div class="imagen_texto">
+              <img src="/rs/mafia_definitive_edition.jpg">
+              <div class="imagen_transparencia"></div>
+              <div class="texto">Mafia Definitive Edition $9.000</div>
+            </div>
+            <div class="imagen_texto">
+              <img src="\rs\battlefield1R.jpg">
+              <div class="imagen_transparencia"></div>
+              <div class="texto">Battlefield 1 $10.000</div>
+            </div>
+            <div class="imagen_texto">
+              <img src="\rs\Cyberpunk-ultimate.webp">
+              <div class="imagen_transparencia"></div>
+              <div class="texto">Cyberpunk 2077 Ultimate Edition $35.000</div>
+            </div>
+            <div class="imagen_texto">
+              <img src="\rs\nfs-heat-deluxe.jpg">
+              <div class="imagen_transparencia"></div>
+              <div class="texto">Need For Speed Heat Deluxe Edition $7.000</div>
+            </div>
+            <div class="imagen_texto">
+              <img src="/rs/cities_skyline.jpg">
+              <div class="imagen_transparencia"></div>
+              <div class="texto">Cities Skyline Remastered $7.000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+    <div class="contenido-centrado lanzamientos">
+      <h3 class="juegos2 white-text center-align" style="margin-top: 60px;">
+        Videojuegos Destacados y Recomendados
+      </h3>
+
+      <div class="row">...</div>
+
+
+
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Resident Evil 4 Remake.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Resident Evil 4 Remake</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$28.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro </a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Assassins Creed shadows.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Assassins Creed Shadows</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$60.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="/Assassins" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\spider-man-2.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Spiderman 2</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$44.990</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Red Dead Redemtion 2.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Red Dead Redemtion 2</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$22.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\cod-bo3.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Call of Duty: Black Ops III - Zombies Chronicles</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$44.990</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Frostpunk 2.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Frostpunk 2</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$12.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Rainbow Six Siege.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Rainbow Six Siege</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$7.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Hades.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Hades</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$10.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+
+      <div class="center-align" style="padding: 10px;">
+        <a class="btn-large waves-effect waves-light btn custom-btn">Ver más<i
+            class="material-icons right">shopping_cart</i></a>
+      </div>
+
+
+      <h3 class="juegos2 white-text center-align" style="margin-top: 30px; padding-block-start: 50px;">
+        Ofertas Destacadas
+      </h3>
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image" style="position: relative;">
+              <div class="triangulo-descuento" style="font-size: 10px;">-20%</div>
+              <img src="\rs\alan-weco.png">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Alan Wake 2</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="text-decoration: line-through; color: #d43256; margin-right: 10px;">$36.000</span>
+                <span style="font-weight: bold; color: #333;">$28.800</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image" style="position: relative;">
+              <div class="triangulo-descuento" style="font-size: 10px;">-40%</div>
+              <img src="\rs\ff16.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Final Fantasy XVI</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="text-decoration: line-through; color: #d43256; margin-right: 10px;">$26.000</span>
+                <span style="font-weight: bold; color: #333;">$15.600</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="/FFXVI" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image" style="position: relative;">
+              <div class="triangulo-descuento" style="font-size: 10px;">-25%</div>
+              <img
+                src="\rs\elden-ring-shadow-of-the-erdtree-edition-shadow-of-the-erdtree-edition-pc-game-steam-europe-cover.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Elden Ring Shadow of the Erdtree</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="text-decoration: line-through; color: #d43256; margin-right: 10px;">$57.000</span>
+                <span style="font-weight: bold; color: #333;">$42.750</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image" style="position: relative;">
+              <div class="triangulo-descuento" style="font-size: 10px;">-50%</div>
+              <img src="\rs\kof-xv-dl.webp">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">The King of Fighters XV</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="text-decoration: line-through; color: #d43256; margin-right: 10px;">$25.000</span>
+                <span style="font-weight: bold; color: #333;">$18.750</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image" style="position: relative;">
+              <div class="triangulo-descuento" style="font-size: 10px;">-50%</div>
+              <img src="\rs\like-a-dragon-iw.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Like a Dragon: Infinite Wealth</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="text-decoration: line-through; color: #d43256; margin-right: 10px;">$50.000</span>
+                <span style="font-weight: bold; color: #333;">$25.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image" style="position: relative;">
+              <div class="triangulo-descuento" style="font-size: 10px;">-70%</div>
+              <img src="\rs\wrc-24.jfif">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Ea Sports WRC 24</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="text-decoration: line-through; color: #d43256; margin-right: 10px;">$44.000</span>
+                <span style="font-weight: bold; color: #333;">$13.200</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image" style="position: relative;">
+              <div class="triangulo-descuento" style="font-size: 10px;">-30%</div>
+              <img src="\rs\wwe-2k25.avif">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">WWE 2K25 Deadman Edition</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="text-decoration: line-through; color: #d43256; margin-right: 10px;">$80.000</span>
+                <span style="font-weight: bold; color: #333;">$56.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image" style="position: relative;">
+              <div class="triangulo-descuento" style="font-size: 10px;">-20%</div>
+              <img src="\rs\cod-mw2.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Call of Duty Modern Warfare 2 Remastered</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="text-decoration: line-through; color: #d43256; margin-right: 10px;">$20.000</span>
+                <span style="font-weight: bold; color: #333;">$16.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="center-align" style="padding: 10px;">
+        <a class="btn-large waves-effect waves-light btn custom-btn" href="/Ofertas">Ver más<i
+            class="material-icons right">shopping_cart</i></a>
+      </div>
+
+
+
+
+
+      <h3 class="juegos2 white-text center-align" style="margin-top: 30px; padding-block-start: 50px;">
+        Recien Lanzados
+      </h3>
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\oblivion.webp">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">The Elder Scrolls IV: Oblivion Remastered</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$36.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Clair-Obscur-Expedition-33-jpg.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Clair Obscur: Expedition 33</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$34.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\fatal_fury.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">FATAL FURY: City of the Wolves</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$39.990</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="/FatalFury" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\split_fiction.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Split Fiction</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$44.990</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\bleach.png">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Bleach Rebirth of Souls</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$44.990</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Atelier-Yumia.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Atelier-Yumia</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$44.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: black;">Añadir al carro</a>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Khazan.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">The First Berserk: Khazan</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$39.990</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: #ea80fc">Añadir al carro</a>
+              <a href="#" style="color: #ea80fc">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Assassins Creed shadows.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Assassins Creed Shadows</h5>
+              <div style="font-size: 15px; margin-top: 20px;">
+                <span style="font-weight: bold; color: #333;">$50.000</span>
+              </div>
+            </div>
+            <div class="card-action"
+              style="display: flex; justify-content: space-between; align-items: center; font-size: 13px;">
+              <a href="#" style="color: #ea80fc">Añadir al carro</a>
+              <a href="#" style="color: #ea80fc">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+      <div class="center-align" style="padding: 10px;">
+        <a class="btn-large waves-effect waves-light btn custom-btn">Ver más<i
+            class="material-icons right">shopping_cart</i></a>
+      </div>
+
+
+      <h3 class="juegos2 white-text center-align" style="margin-top: 30px; padding-block-start: 50px;">
+        Proximos Lanzamientos</h3>
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\dobby.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Tony Hawk's Pro Skater 3+4</h5>
+              <h6>Disponible el 11/7/2025</h6>
+            </div>
+            <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: bold; color: #333;">$47.500</span>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\f1_2025.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">F1 2025 Iconic Edition</h5>
+              <h6>Disponible el 27/5/2025</h6>
+            </div>
+            <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: bold; color: #333;">$53.900</span>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Metal-Gear-Solid-Delta_-Snake-Eater.webp">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Metal Gear Solid Delta</h5>
+              <h6>Disponible el 28/8/2025</h6>
+            </div>
+            <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: bold; color: #333;">$50.000</span>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\Doom the dark ages.png">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">DOOM: The Dark Ages</h5>
+              <h6>Disponible el 14/5/2025</h6>
+            </div>
+            <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: bold; color: #333;">$60.000</span>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\mafia the old country.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Mafia The Old Country</h5>
+              <h6>Disponible el 2025</h6>
+            </div>
+            <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: bold; color: #333;">$60.000</span>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\silent hill f.jpg">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Silent Hill f</h5>
+              <h6>Fecha por confirmar</h6>
+            </div>
+            <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: bold; color: #333;">$60.000</span>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\anno 117 pax romana.avif">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Anno 117: Pax Romana</h5>
+              <h6>Fecha por confirmar</h6>
+            </div>
+            <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: bold; color: #333;">$60.000</span>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col s12 m6 l3">
+          <div class="card">
+            <div class="card-image">
+              <img src="\rs\borderlands4.webp">
+            </div>
+            <div class="card-content">
+              <h5 style="margin-bottom: 60px;">Borderlands 4</h5>
+              <h6>Disponible el 12/9/2025</h6>
+            </div>
+            <div class="card-action" style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-weight: bold; color: #333;">$60.000</span>
+              <a href="#" style="color: black;">Ver más</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="center-align" style="padding: 10px;">
+  <a class="btn-large waves-effect waves-light custom-btn">
+    Ver más<i class="material-icons right">shopping_cart</i>
+  </a>
+</div>
+
+
+
+
+    </div>
+
+
+<br><br>
+
+
+
+<!--
+ <div class="parallax1 bg1">
+  <div class="content1">
+    <h1>ejemplo 1</h1>
+    <p>lorem</p>
+  </div>
+</div>
+<div class="parallax1 bg2">
+  <div class="content1">
+    <h1>ejemplo 2</h1>
+    <p>lorem</p>
+  </div>
+</div>
+<div class="parallax1 bg3">
+  <div class="content1">
+    <h1>ejemplo 3</h1>
+    <p>lorem</p>
+  </div>
+</div>
+
+ -->
+
+
+<section class="playstation-hero">
+  <div class="hero-contenido">
+    <h1>Bienvenido al Mundo PlayStation</h1>
+    <p>Sumérgete en aventuras épicas, gráficos de última generación y juegos exclusivos que solo encontrarás en PS5.</p>
+    <a href="#playstation-juegos" class="btn-hero">Ver juegos</a>
+  </div>
+</section>
+
+
+<h3 class="juegos2 white-text center-align" style="margin-top: 30px; padding-block-start: 50px;">
+        Proximos Lanzamientos</h3>
+
+<br>
+
+<div class="container">
+<div class="row">
+  <!-- Card 1 -->
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737753991-doom-the-dark-ages-ps5-pre-orden-0.webp" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737734998-indiana-jones-and-the-great-circle-ps5-pre-orden-0.webp" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="rs\ps4 caratula\1680029419-atelier-ryza-3-alchemist-of-the-end-the-secret-key-ps5-0.jpg" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1714082278-nier-automata-game-of-the-yorha-edition-ps4-0.webp" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- Card del juego -->
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737762362-ninja-gaiden-2-black-ps5-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1724966828-warhammer-40000-space-marine-2-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1715795329-metro-awakening-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1738798908-sid-meiers-civilization-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<h3 class="juegos2 white-text center-align" style="margin-top: 30px; padding-block-start: 50px;">
+        Proximos Lanzamientos</h3>
+
+<br>
+
+<div class="container">
+<div class="row">
+  <!-- Card 1 -->
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737753991-doom-the-dark-ages-ps5-pre-orden-0.webp" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737734998-indiana-jones-and-the-great-circle-ps5-pre-orden-0.webp" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="rs\ps4 caratula\1680029419-atelier-ryza-3-alchemist-of-the-end-the-secret-key-ps5-0.jpg" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1714082278-nier-automata-game-of-the-yorha-edition-ps4-0.webp" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- Card del juego -->
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737753991-doom-the-dark-ages-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737753991-doom-the-dark-ages-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737753991-doom-the-dark-ages-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1738798908-sid-meiers-civilization-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<h3 class="juegos2 white-text center-align" style="margin-top: 30px; padding-block-start: 50px;">
+        Proximos Lanzamientos</h3>
+
+<br>
+
+<div class="container">
+<div class="row">
+  <!-- Card 1 -->
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737753991-doom-the-dark-ages-ps5-pre-orden-0.webp" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737734998-indiana-jones-and-the-great-circle-ps5-pre-orden-0.webp" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="rs\ps4 caratula\1680029419-atelier-ryza-3-alchemist-of-the-end-the-secret-key-ps5-0.jpg" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1714082278-nier-automata-game-of-the-yorha-edition-ps4-0.webp" alt="Spider-Man">
+      </div>
+      <div class="card-content center-align">
+        <h5>???</h5>
+        <a class="btn jugar-btn">Jugar</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <!-- Card del juego -->
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737753991-doom-the-dark-ages-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737753991-doom-the-dark-ages-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1737753991-doom-the-dark-ages-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col s12 m6 l3">
+    <div class="card game-card">
+      <div class="card-image">
+        <img src="/rs/ps4 caratula/1738798908-sid-meiers-civilization-ps5-pre-orden-0.webp" alt="Nier Automata">
+      </div>
+      <div class="card-content center-align">
+        <h5 class="game-title">Nier Automata</h5>
+        <p class="price">$19.990 CLP</p>
+        <div class="card-buttons">
+          <a class="btn grey ver-btn">Ver más</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+<h3 class="juegos2 white-text center-align" style="margin-top: 30px; padding-block-start: 50px;">
+  Próximos Lanzamientos Compactos
+</h3>
+<br>
+
+
+
+
+
+
+
+
+  </main>
+  <footer class="page-footer deep-purple darken-1">
+    <div class="container">
+      <div class="row">
+
+        <div class="col s12 m4 l4">
+          <h5 class="white-text">Empresa</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Contacto</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Términos y condiciones</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Política de Privacidad</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Preguntas Frecuentes</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Derechos del consumidor</a></li>
+          </ul>
+        </div>
+
+        <div class="col s12 m4 l4">
+          <h5 class="white-text">Horario de Atención</h5>
+          <ul>
+            <li><span class="grey-text text-lighten-3">Lunes a Viernes</span></li>
+            <li><span class="grey-text text-lighten-3">09:00 AM a 18:00 PM</span></li>
+            <li><span class="grey-text text-lighten-3">Email: serviciocliente@infinitylevel.cl</span></li>
+          </ul>
+        </div>
+
+        <div class="col s12 m4 l4">
+          <h5 class="white-text">Mi Cuenta</h5>
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="#!">Historial de Compra</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Favoritos</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mi Cuenta</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Mis Direcciones</a></li>
+          </ul>
+        </div>
+      </div>
+      <ul class="redes-sociales-footer">
+        <li><a href="#"><i class="fa-brands
+        fa-tiktok"></i></a></li>
+        <li><a href="#"><i class="fa-brands
+        fa-twitter"></i></a></li>
+        <li><a href="#"><i class="fa-brands
+        fa-instagram"></i></a></li>
+        <li><a href="#"><i class="fa-brands
+        fa-whatsapp"></i></a></li>
+      </ul>
+    </div>
+
+    <div class="footer-copyright">
+      <div class="container">
+        © 2025 Infinity Level
+        <a class="grey-text text-lighten-4 right" href="#!"></a>
+      </div>
+    </div>
+  </footer>
+
+
+
+  <!-- jQuery CDN -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <!-- Materialize JS CDN -->
+
+  <script>
+    $("document").ready(function () {
+      $(".button-collapse").sideNav();
+    });
+  </script>
+  <script>
+    $(document).ready(function () {
+      $(".dropdown-button").dropdown();
+    });
+  </script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.dropdown-trigger');
+      var instances = M.Dropdown.init(elems, options);
+    });
+
+
+  </script>
+
+  <!--parallax bacano-->
+
+
+
+
+
+
+
+
+  <script>
+
+    document.addEventListener('DOMContentLoaded', function () {
+      var elems = document.querySelectorAll('.sidenav');
+      M.Sidenav.init(elems);
+    });
+  </script>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+ <script>
+gsap.registerPlugin(ScrollTrigger);
+
+gsap.utils.toArray('.parallax-gsap').forEach((section) => {
+  const image = section.querySelector('img');
+  gsap.fromTo(image, {
+    y: '-20%',
+  }, {
+    y: '20%',
+    ease: 'none',
+    scrollTrigger: {
+      trigger: section,
+      scrub: true,
+      start: 'top bottom',
+      end: 'bottom top',
+    },
+  });
+});
+</script>
+
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const carouselElem = document.querySelector('.carousel');
+  const logos = document.querySelectorAll('.logo-slide');
+  const carousel = M.Carousel.init(carouselElem, {
+    fullWidth: true,
+    indicators: true,
+    duration: 200
+  });
+
+  function syncLogoWithIndicator() {
+    const indicators = document.querySelectorAll('.carousel .indicators .indicator-item');
+    let idx = 0;
+    indicators.forEach((el, i) => {
+      if (el.classList.contains('active')) idx = i;
+    });
+    logos.forEach((logo, i) => {
+      logo.classList.toggle('active', i === idx);
+    });
+  }
+
+  // Sincroniza el logo al cargar la página
+  syncLogoWithIndicator();
+
+  // Autoplay: avanza cada 4 segundos, pero el logo se sincroniza SOLO cuando el slide cambia
+  setInterval(function () {
+    carousel.next();
+    // El logo se sincroniza cuando el slide realmente cambia (evento)
+  }, 4000);
+
+  // Sincroniza el logo SIEMPRE que cambie el slide (manual o autoplay)
+  carouselElem.addEventListener('carouselNext', syncLogoWithIndicator);
+  carouselElem.addEventListener('carouselPrev', syncLogoWithIndicator);
+  carouselElem.addEventListener('carouselSet', syncLogoWithIndicator);
+
+  // También sincroniza al hacer clic en los indicadores
+  document.querySelector('.carousel .indicators').addEventListener('click', function() {
+    setTimeout(syncLogoWithIndicator, 220);
+  });
+
+  // Por seguridad, sincroniza el logo después de cada animación de transición
+  carouselElem.addEventListener('transitionend', syncLogoWithIndicator);
+});
+</script>
+
+
+
+</body>
+
+</html>

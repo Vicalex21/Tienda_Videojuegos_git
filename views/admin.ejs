@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Registro de Usuario - Tienda Gamer</title>
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+  <!-- Estilos propios -->
+  <link rel="stylesheet" href="css/style.css">
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+  body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    background-color: #f4f6f9;
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
+
+  nav, .page-footer {
+    background-color: #2c3e50 !important;
+  }
+
+  .nav-wrapper a, .nav-wrapper ul li a {
+    font-weight: 500;
+    font-size: 15px;
+  }
+
+  .material-icons, label {
+    color: #1976d2 !important;
+    text-shadow: none;
+  }
+
+  .card, .collapsible, .collapsible-body {
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  }
+
+  .card-title {
+    font-weight: 500;
+    color: #212121;
+  }
+
+  .btn, .btn-small, .btn-large {
+    background-color: #1976d2 !important;
+    color: #fff !important;
+    font-weight: 500;
+    text-transform: none;
+    box-shadow: none;
+    border-radius: 4px;
+  }
+
+  .btn:hover, .btn-small:hover, .btn-large:hover {
+    background-color: #1565c0 !important;
+  }
+
+  .btn-flat {
+    color: #1976d2 !important;
+    font-weight: 500;
+  }
+
+  .input-field input,
+  .input-field textarea {
+    color: #212121 !important;
+  }
+
+  .input-field input:focus, .input-field textarea:focus {
+    border-bottom: 2px solid #1976d2 !important;
+    box-shadow: none !important;
+  }
+
+  .input-field label {
+    color: #424242 !important;
+  }
+
+  table.striped > tbody > tr:nth-child(odd) {
+    background-color: #f2f2f2 !important;
+  }
+
+  table.striped > tbody > tr:nth-child(even) {
+    background-color: #ffffff !important;
+  }
+
+  thead {
+    background-color: #e3e3e3;
+  }
+
+  th, td {
+    color: #212121 !important;
+    font-size: 14px;
+  }
+
+  .responsive-table {
+    overflow-x: auto;
+  }
+
+  footer h5 {
+    font-weight: 500;
+  }
+
+  .redes-sociales-footer i {
+    font-size: 20px;
+    color: #ffffff;
+    margin-right: 10px;
+  }
+
+
+
+  
+</style>
+
+</head>
+<body>
+
+  
+  <header>
+    <nav class="deep-purple darken-1">
+      <div class="nav-wrapper">
+        <div class="container">
+          <a href="#" class="brand-logo"></a>
+          <a href="#" data-activates="mobile-menu" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="#">Tengo una Cuenta</a></li>
+            <li><a href="#">Recuperar Contraseña</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-menu">
+            <li>
+              <div class="userView">
+                <div class="background">
+                  <img src="http://lorempixel.com/output/abstract-q-c-640-480-10.jpg">
+                </div>
+                <a href="#!user"><img class="circle" src="http://lorempixel.com/output/people-q-c-640-480-9.jpg"></a>
+                <a href="#!name"><span class="white-text name">John Doe</span></a>
+                <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+              </div>
+            </li>
+            <li><a href="#">Inicio</a></li>
+            <li><a href="#">Catálogo</a></li>
+            <li><a href="#">Soporte</a></li>
+            <li><a href="#">Contacto</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container" style="margin-top: 60px;">
+  <div class="card z-depth-2" style="background-color: #ffffff; border-radius: 8px;">
+    <div class="card-content">
+      <span class="card-title center-align" style="font-family: 'Arial', sans-serif; font-size: 1.8rem; color: #212121;">
+        Listado de Personas
+      </span>
+
+      <div class="responsive-table">
+        <table class="striped highlight centered">
+          <thead style="background-color: #eeeeee; color: #212121;">
+            <tr>
+              <th>ID</th>
+              <th>Nombre</th>
+              <th>Apellido</th>
+              <th>Correo</th>
+              <th>País</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+<tbody>
+  <% personas.forEach(function(persona) { %>  
+    <tr>
+      <td><%= persona.id %></td>
+      <td><%= persona.nombre %></td>
+      <td><%= persona.apellido %></td>
+      <td><%= persona.correo %></td>
+      <td><%= persona.pais %></td>
+      <td>
+        <form action="/editarPersona/<%= persona.id %>" method="get">
+          <button class="waves-effect waves-light btn blue" type="submit">Editar <i class="material-icons right">edit</i></button>
+       </form>
+       <form action="/borrar" method="post">
+        <input type="hidden" name="idpersona" value="<%= persona.id%>">
+        <button class="waves-effect waves-light btn red" type="submit">Borrar <i class="material-icons right">delete</i></button>
+       </form>
+       </td>
+       </tr>
+  <% }); %>
+</tbody>
+</table>
+
+       
+
+
+      </div>
+    </div>
+  </div>
+</main>
+
+
+
+  
+</main>
+
+
+
+  <footer class="page-footer deep-purple darken-1">
+        <div class="container">
+            <div class="row">
+
+                <div class="col s12 m4 l4">
+                    <h5 class="white-text">Empresa</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contacto</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Términos y condiciones</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Política de Privacidad</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Preguntas Frecuentes</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Derechos del consumidor</a></li>
+                    </ul>
+                </div>
+                <div class="col s12 m4 l4">
+                    <h5 class="white-text">Horario de Atención</h5>
+                    <ul>
+                        <li><span class="grey-text text-lighten-3">Lunes a Viernes</span></li>
+                        <li><span class="grey-text text-lighten-3">09:00 AM a 18:00 PM</span></li>
+                        <li><span class="grey-text text-lighten-3">Email: serviciocliente@infinitylevel.cl</span></li>
+                    </ul>
+                </div>
+                <div class="col s12 m4 l4">
+                    <h5 class="white-text">Mi Cuenta</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!">Historial de Compra</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Favoritos</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Mi Cuenta</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Mis Direcciones</a></li>
+                    </ul>
+                </div>
+            </div>
+            <ul class="redes-sociales-footer">
+                <li><a href="#"><i class="fa-brands
+        fa-tiktok"></i></a></li>
+                <li><a href="#"><i class="fa-brands
+        fa-twitter"></i></a></li>
+                <li><a href="#"><i class="fa-brands
+        fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands
+        fa-whatsapp"></i></a></li>
+            </ul>
+        </div>
+
+        <div class="footer-copyright">
+            <div class="container">
+                © 2025 Infinity Level
+                <a class="grey-text text-lighten-4 right" href="#!"></a>
+            </div>
+        </div>
+    </footer>
+
+
+  
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".button-collapse").sideNav();
+    });
+  </script>
+</body>
+</html>

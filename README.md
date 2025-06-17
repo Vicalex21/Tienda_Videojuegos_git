@@ -1,13 +1,15 @@
 # Tienda de Videojuegos
 
-Bienvenido a **Tienda de Videojuegos**, una aplicación para la gestión y venta de videojuegos, desarrollada para ejecutarse y editarse fácilmente en **Visual Studio Code** (el editor azul).
+Bienvenido a **Tienda de Videojuegos**, un proyecto web para la gestión y venta de videojuegos, desarrollada para ejecutarse y editarse fácilmente en **Visual Studio Code**.
 
-## Características
+## Características (De momento)
 
 - Gestión de inventario de videojuegos
-- Registro y búsqueda de productos
-- Procesamiento de ventas
+- Gestion de clientes
+- Procesamiento de ventas (En desarrollo)
 - Interfaz intuitiva para usuarios y administradores
+- Responsiva (💀)
+
 
 ## Requisitos
 
@@ -45,17 +47,3 @@ Bienvenido a **Tienda de Videojuegos**, una aplicación para la gestión y venta
    - Presiona `F5` para iniciar la depuración o usa el terminal integrado (`Ctrl + ñ`) para ejecutar comandos manualmente.
 
 2. **Sigue las instrucciones en pantalla para comenzar a gestionar tu tienda.**
-
-## Contribuciones
-
-¡Las contribuciones son bienvenidas!  
-Por favor, abre un issue o haz un pull request para sugerir mejoras.
-
-## Licencia
-
-Este proyecto está bajo la licencia [MIT](LICENSE).
-
----
-
-**Desarrollado por:** [Tu Nombre o Equipo]  
-**Contacto:** [Tu correo o enlace de contacto]
